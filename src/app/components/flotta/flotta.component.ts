@@ -24,7 +24,7 @@ export class FlottaComponent implements OnInit {
       id: 2,
       name: 'Python C-27 S',
       description: 'Agile, veloce e incredibilmente spazioso. Ideale per chi cerca prestazioni senza rinunciare al comfort.',
-      image: 'https://images.unsplash.com/photo-1605281317010-fe5ffe79ba02?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://media-assets.wired.it/photos/615f2c188f3096026bed2f33/master/w_1600%2Cc_limit/1527847718_7_780_EXT_02_FY780.jpg',
       specs: { length: '8.50m', speed: '45kn', guests: '8' }
     },
     {
@@ -38,7 +38,7 @@ export class FlottaComponent implements OnInit {
       id: 4,
       name: 'Python Sport 40',
       description: 'Design aggressivo e prestazioni da corsa. Per chi vuole dominare il mare con stile.',
-      image: 'https://images.unsplash.com/photo-1544161513-0179fe746d32?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://www.barcheamotore.com/wp-content/uploads/2021/02/Beneteau-Granturismo-36-fuoribordo-1.jpg',
       specs: { length: '12.00m', speed: '55kn', guests: '12' }
     },
     {
