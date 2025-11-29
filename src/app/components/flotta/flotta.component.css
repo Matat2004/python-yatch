@@ -1,0 +1,245 @@
+.flotta-container {
+  padding: 2rem;
+  padding-top: 120px;
+  color: #222;
+  background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-color: #f5f5dc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2887a1;
+  text-align: center;
+  width: 100%;
+}
+
+/* Carousel wrapper for desktop */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+/* 3D Carousel Styles */
+.carousel-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-scene {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.carousel-cell {
+  position: absolute;
+  width: 280px;
+  height: 350px;
+  left: 10px;
+  top: 10px;
+  transition: opacity 0.5s;
+}
+
+.boat-card {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #2887a1;
+  border-radius: 16px;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.boat-card.selected {
+  border-width: 3px;
+  box-shadow: 0 0 25px rgba(40, 135, 161, 0.6);
+  background: white;
+}
+
+.boat-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.boat-card h3 {
+  color: #2887a1;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+/* Controls */
+.nav-btn {
+  background: #2887a1;
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: #206a80;
+  transform: scale(1.1);
+}
+
+/* Details Section */
+.boat-details {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid #2887a1;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2887a1;
+}
+
+.detail-content p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2887a1;
+}
+
+@media (max-width: 768px) {
+  .flotta-container {
+    padding: 1rem;
+    padding-top: 100px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-content {
+    margin-bottom: 2rem;
+  }
+  
+  .carousel-scene {
+    width: 250px;
+    height: 350px;
+  }
+  
+  .carousel-cell {
+    width: 230px;
+    height: 300px;
+  }
+  
+  .nav-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    background: rgba(40, 135, 161, 0.9);
+  }
+  
+  .nav-btn.prev {
+    left: 10px;
+  }
+  
+  .nav-btn.next {
+    right: 10px;
+  }
+  
+  .boat-details {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .detail-content h2 {
+    font-size: 2rem;
+  }
+  
+  .specs {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

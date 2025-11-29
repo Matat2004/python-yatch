@@ -1,0 +1,144 @@
+/* Navbar trasparente */
+.custom-navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, background-color 0.4s ease;
+  backdrop-filter: blur(6px);
+  transform: translateY(0);
+}
+
+.custom-navbar.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo */
+.navbar-logo {
+  height: 70px;
+  transition: transform 1s ease;
+  border-radius: 12px;
+}
+.navbar-logo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Link */
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin-left: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link:hover{
+  cursor: pointer;
+  color: rgb(40, 135, 161) !important;
+}
+
+.nav-link.active {
+  color: rgb(40, 135, 161) !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: url("data:image/svg+xml;utf8,<svg width='100' height='8' xmlns='http://www.w3.org/2000/svg'><path d='M0,4 Q5,0 10,4 T20,4 T30,4 T40,4 T50,4 T60,4 T70,4 T80,4 T90,4 T100,4' fill='none' stroke='%232887a1' stroke-width='1.5'/></svg>") repeat-x;
+  animation: wave 6s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100px;
+  }
+}
+
+
+.footer-custom {
+  background-color: #000;
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.footer-title {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: rgb(40, 135, 161) !important;
+}
+
+.footer-text {
+  color: white;
+  font-size: 0.95rem;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-divider {
+  border-top: 1px solid #444;
+}
+
+.footer-copy {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.footer-social-link {
+  color: white;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-social-link:hover {
+  color:rgb(40, 135, 161) !important;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #2887a1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: fadeInUp 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background: #206a80;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

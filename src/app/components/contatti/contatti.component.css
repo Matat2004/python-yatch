@@ -1,0 +1,102 @@
+.contatti-container {
+  min-height: 100vh;
+  background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-color: #f5f5dc;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 120px;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 4rem;
+  border: 1px solid #2887a1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #2887a1;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-item h3 {
+  color: #2887a1;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.detail-item p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  color: #222;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2887a1;
+  box-shadow: 0 0 0 3px rgba(40, 135, 161, 0.1);
+}
+
+button {
+  padding: 1rem 2rem;
+  background: #2887a1;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.02);
+  background: #206a80;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}

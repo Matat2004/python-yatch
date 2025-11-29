@@ -1,0 +1,46 @@
+<div class="flotta-container">
+  <h1 class="title">La Nostra Flotta</h1>
+  
+  <div class="carousel-wrapper">
+    <button class="nav-btn prev" (click)="rotateCarousel(-1)">&#10094;</button>
+    
+    <div class="carousel-content">
+      <div class="carousel-scene">
+        <div class="carousel" [style.transform]="'rotateY(' + (selectedIndex * -72) + 'deg)'">
+          <div *ngFor="let boat of boats; let i = index" 
+               class="carousel-cell"
+               [style.transform]="'rotateY(' + (i * 72) + 'deg) translateZ(400px)'"
+               (click)="selectBoat(i)">
+            <div class="boat-card" [class.selected]="i === selectedIndex">
+              <img [src]="boat.image" [alt]="boat.name" class="boat-image">
+              <h3>{{ boat.name }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="nav-btn next" (click)="rotateCarousel(1)">&#10095;</button>
+  </div>
+
+  <div class="boat-details" *ngIf="selectedBoat">
+    <div class="detail-content">
+      <h2>{{ selectedBoat.name }}</h2>
+      <p>{{ selectedBoat.description }}</p>
+      <div class="specs">
+        <div class="spec-item">
+          <span class="label">Lunghezza</span>
+          <span class="value">{{ selectedBoat.specs.length }}</span>
+        </div>
+        <div class="spec-item">
+          <span class="label">Velocità</span>
+          <span class="value">{{ selectedBoat.specs.speed }}</span>
+        </div>
+        <div class="spec-item">
+          <span class="label">Ospiti</span>
+          <span class="value">{{ selectedBoat.specs.guests }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

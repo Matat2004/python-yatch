@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar" [class.navbar-hidden]="!isNavbarVisible">
+  <div class="container">
+    <!-- Logo cliccabile -->
+    <a class="navbar-brand" routerLink="/home">
+      <img src="python-yacht.png" alt="Logo" class="navbar-logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/flotta" routerLinkActive="active">Flotta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contatti" routerLinkActive="active">Contatti</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet />
+
+<!-- Scroll to Top Button -->
+<button *ngIf="showScrollTop" class="scroll-to-top" (click)="scrollToTop()" aria-label="Scroll to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+
+<footer class="footer-custom">
+  <div class="footer-container container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      
+      <div class="footer-col col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="footer-title">Python yacht</h5>
+        <p class="footer-text">Soluzioni professionali per la vendita di Gommoni per ogni tipo di evento.</p>
+      </div>
+
+      <div class="footer-col col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="footer-title">Contatti</h5>
+        <p class="footer-text"><i class="bi bi-house-door me-2"></i> Via Esempio 123, Milano</p>
+        <p class="footer-text"><i class="bi bi-envelope me-2"></i> info&commat;pythonyacht.com</p>
+        <p class="footer-text"><i class="bi bi-phone me-2"></i> +39 345 678 9012</p>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider mb-4" />
+
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="footer-copy">© 2025 Python yacht - Tutti i diritti riservati</p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="footer-social text-center text-md-end">
+          <a href="https://www.instagram.com/python_yacht_/" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@python894" class="footer-social-link"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
