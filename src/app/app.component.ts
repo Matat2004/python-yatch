@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterOutlet, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,22 @@ export class AppComponent {
   isNavbarVisible = true;
   showScrollTop = false;
   private lastScrollTop = 0;
+
+  constructor(private router: Router) {
+    // Close mobile navbar on route change
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.closeNavbar();
+    });
+  }
+
+  private closeNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+    }
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
